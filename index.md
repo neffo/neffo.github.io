@@ -1,21 +1,19 @@
 ---
-layout: page
-title: neffo.github.io
-tagline: 
-description: 
+layout: default
 ---
-
-## About
 
 This page is a placeholder for the moment.
 
-If you use Gnome and like a new wallpaper every day, please check out my [BingWallpaper](https://github.com/neffo/bing-wallpaper-gnome-extension) extension. It's not on extensions.gnome.org yet, but you can install from the [zip file](https://neffo.github.io/BingWallpaper@ineffable-gmail.com.zip). Please let me know if it breaks for you, if you have any feature requests, or make modifications yourself.
+I'm an avid Ubuntu and GNOME user, and in my spare time I've created a few GNOME extensions to add a splash of colour or utility to the experience.
 
-This extension is based extensively on the NASA APOD extension by Elinvention (see https://github.com/Elinvention) and inspired by Bing Desktop Wallpaper Changer by Utkarsh Gupta (see https://github.com/UtkarshGpta). Please check out their work too.
+## Bing Wallpaper
 
-## Screenshot
+![Screenshot](/screenshots/bing-costarica.jpg)
 
-![Screenshot](/screenshots/notification.png)
+My [Bing Wallpaper](https://github.com/neffo/bing-wallpaper-gnome-extension) extension was my first attempt at creating an extension and has been quite successful, I think. This extension was based on the NASA APOD extension by Elinvention and inspired by both the original Windows app and the Bing Desktop Wallpaper Changer by Utkarsh Gupta.
 
+## Google Earth View
 
+![Screenshot](/screenshots/Jiamusi_China.jpg)
 
+This extension uses the curated Google Earth images to create a dynamic wallpaper [experience](https://www.youtube.com/watch?v=W1iQ-6KDQ2w).
