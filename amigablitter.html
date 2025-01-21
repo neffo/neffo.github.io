@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>canvas test</title>
+		<link rel="stylesheet" href="canvas.css">
+	</head>
+	<body>
+		<p>
+			<h3>JS mockup in a canvas tag</h3>
+			<div id="">
+				<canvas id="test" width="320" height="200"></canvas>
+			</div>
+			<div id="rotation"></div>
+		</p>
+		<p>
+			<h3>Final output, cropped to 300px wide</h3>
+			<img src="images/shoutout.gif">
+			<ul>
+				<li>dual playfield, 3-bitplanes for background plasma, 2-bitplanes for foreground 3d object</li>
+				<li>bg is a static plasma image colour cycling, it's a bit ugly I know</li>
+				<li>foreground - blitter
+					<ul>
+						<li>first rendered as a filled polygon first (drawing vertical lines, then filling)</li>
+						<li>then draw edges and details next</li>
+						<li>it's pre-calced but math is pretty simple, so might be possible to do real-time</li>
+					</ul>
+				</li>
+			  </ul>
+		</p>
+	</body>
+
+	<script src="canvas.js"></script>
+</html>
