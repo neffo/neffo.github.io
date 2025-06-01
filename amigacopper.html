@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>copper test</title>
+		<link rel="stylesheet" href="canvas.css">
+	</head>
+	<body>
+		<p>
+			<h3>original video</h3>
+			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GV3HUDMQ-F8?si=PhEet4h1RmvyXt3n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</p>
+		<p>
+			<h3>Final output</h3>
+			
+			<ul>
+				<li>effect uses copper list to set the colour 0 (bg)</li>
+				<li>original netflix logo animation is vertical, but this is a bit limiting on Amiga hardware (we'd be stuck at 4px or 8px wide bars)</li>
+				<li>we take netflix logo video from youtube, convert to 256px wide png frames, and interpolate to double the frame rate (source 96 frames at 25 fps):</li>
+				<br><img src="images/netflix100.png"><img src="images/netflix130.png"><img src="images/netflix170.png"><img src="images/netflix190.png"><br>
+				<li>using Python and PIL library we extract the pixel information on a row near the bottom of the frames (we don't want the 'N', just the colours)</li>
+				<li>we then encode the bars as copper instructions: WAIT for start of horizontal position (y), then MOVE the 12bit colour equivalent of the 24bit source COLOR00 register (i.e we set the background colour)</li>
+				<li>this obviously only generates a copper list for each frame, so we repeat this for each interpolated frame</li>
+				<li>we then set up the copper to jump to a specific frame to create the animation in our main loop</li>
+				<li>the copper instructions for the full animaton take up about 32950 bytes of chip (~ equivalent of a 320x256x3bp image), we store the copper offsets (to the 191 frames) in fast/slow ram</li>
+			</ul>
+			<img src="images/netflix3.gif">
+		</p>
+	</body>
+
+	<script src="canvas.js"></script>
+</html>
