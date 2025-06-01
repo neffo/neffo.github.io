@@ -9,8 +9,7 @@
 			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GV3HUDMQ-F8?si=PhEet4h1RmvyXt3n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		</p>
 		<p>
-			<h3>Final output</h3>
-			
+			<h3>How it works</h3>
 			<ul>
 				<li>effect uses copper list to set the colour 0 (bg)</li>
 				<li>original netflix logo animation is vertical, but this is a bit limiting on Amiga hardware (we'd be stuck at 4px or 8px wide bars)</li>
@@ -22,6 +21,8 @@
 				<li>we then set up the copper to jump to a specific frame to create the animation in our main loop</li>
 				<li>the copper instructions for the full animaton take up about 32950 bytes of chip (~ equivalent of a 320x256x3bp image), we store the copper offsets (to the 191 frames) in fast/slow ram</li>
 			</ul>
+
+			<h3>Final output</h3>
 			<img src="images/netflix_origrotated.gif"><img src="images/netflix3.gif">
 		</p>
 	</body>
