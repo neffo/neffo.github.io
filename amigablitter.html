@@ -26,7 +26,7 @@
 									<p>in the mode we use it 'switches on' the fill when it hits the first non-zero bit (blitter fills right-to-left, if I remember correctly)</p>
 									<p>the bounding lines require 4 blit operations here</p>
 									<p>
-										<img src="images/blitter1.png">
+										<img src="images/blitter1.png" width="25%">
 									</p>
 								</li>
 								<li><p>the blitter fill can be tripped up if you have overlapping lines or two pixels wide lines</p>
@@ -34,7 +34,7 @@
 									<p>we are drawing directly to the frame buffer, but often this would be done to scratch memory first and blitted to the display buffer</p>
 									<p>generally you'd do this when you have multiple bitplanes (we're just using one here)</p>
 									<p>
-										<img src="images/blitter2.png">
+										<img src="images/blitter2.png" width="25%">
 									</p>
 								</li>
 							</ul>
@@ -43,7 +43,7 @@
 							<p>then draw edges and details next</p>
 							<p>there are many lines drawn and these are all individual blit operations</p>
 							<p>
-								<img src="images/blitter3.png">
+								<img src="images/blitter3.png" width="25%">
 							</p>
 						</li>
 						<li>it's pre-calced but math is pretty simple, so might be possible to do real-time</li>
