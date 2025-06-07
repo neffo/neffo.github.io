@@ -19,8 +19,33 @@
 				<li>bg is a static plasma image colour cycling, it's a bit ugly I know</li>
 				<li>foreground - blitter
 					<ul>
-						<li>first rendered as a filled polygon first (drawing vertical lines, then filling)</li>
-						<li>then draw edges and details next</li>
+						<li>rendered filled polygon is a two-step process
+							<ul>
+								<li>
+									<p>drawing vertical lines to bound the fill</p>
+									<p>in the mode we use it 'switches on' the fill when it hits the first non-zero bit (blitter fills right-to-left, if I remember correctly)</p>
+									<p>the bounding lines require 4 blit operations here</p>
+									<p>
+										<img src="images/blitter1.png">
+									</p>
+								</li>
+								<li><p>the blitter fill can be tripped up if you have overlapping lines or two pixels wide lines</p>
+									<p>the blit to fill the amiga is just a single operation</p>
+									<p>we are drawing directly to the frame buffer, but often this would be done to scratch memory first and blitted to the display buffer</p>
+									<p>generally you'd do this when you have multiple bitplanes (we're just using one here)</p>
+									<p>
+										<img src="images/blitter2.png">
+									</p>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<p>then draw edges and details next</p>
+							<p>there are many lines drawn and these are all individual blit operations</p>
+							<p>
+								<img src="images/blitter3.png">
+							</p>
+						</li>
 						<li>it's pre-calced but math is pretty simple, so might be possible to do real-time</li>
 					</ul>
 				</li>
